@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Genesis">
+      <UniqueIdentifier>{535FBF50-BF3E-3EEC-C856-C9C234B5A44D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Genesis\Events">
+      <UniqueIdentifier>{D72FACF6-C3FD-9FFC-AC91-102398FE7B61}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Genesis.h" />
+    <ClInclude Include="src\Genesis\Application.h">
+      <Filter>Genesis</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Genesis\Core.h">
+      <Filter>Genesis</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Genesis\EntryPoint.h">
+      <Filter>Genesis</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Genesis\Events\ApplicationEvent.h">
+      <Filter>Genesis\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Genesis\Events\Event.h">
+      <Filter>Genesis\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Genesis\Events\KeyEvent.h">
+      <Filter>Genesis\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Genesis\Events\MouseEvent.h">
+      <Filter>Genesis\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Genesis\Log.h">
+      <Filter>Genesis</Filter>
+    </ClInclude>
+    <ClInclude Include="src\hzpch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Genesis\Application.cpp">
+      <Filter>Genesis</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Genesis\Log.cpp">
+      <Filter>Genesis</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hzpch.cpp" />
+  </ItemGroup>
+</Project>

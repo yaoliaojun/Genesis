@@ -3,6 +3,7 @@
 //用户包含,用于Genesis APP
 
 #include "Genesis/Application.h"
+#include "Genesis/Layer.h"
 #include "Genesis/Log.h"
 
 //--------Entry Point----------

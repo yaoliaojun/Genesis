@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "Events/Event.h"
+#include "Window.h"
 
 namespace Genesis {
 	class GENESIS_API Application
@@ -12,6 +13,9 @@ namespace Genesis {
 
 
 		void Run();
+	private:
+		std::unique_ptr<Window> m_Window;//´°¿ÚÖ¸Õë
+		bool m_Running = true;//Ñ­»·ÅÐ¶Ï
 	};
 
 

@@ -9,9 +9,9 @@ namespace Genesis {
 	public:
 		inline int GetKeyCode() const { return m_KeyCode; }
 
-		EVENT_CLASS_CATEGORY(EventCategoryKeyboard |EventCategoryInput)
+		EVENT_CLASS_CATEGORY(EventCategoryKeyboard |EventCategoryInput)//大类中定类型，小类中定名称
 	protected:
-		KeyEvent(int keycode)
+		KeyEvent(int keycode)//受保护，基类外不能创建
 			: m_KeyCode(keycode) {}
 
 		int m_KeyCode;

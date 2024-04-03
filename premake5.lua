@@ -10,6 +10,12 @@ workspace "Genesis"
 
 	outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+	-- Include directories relative to root folder (solution directory)
+	IncludeDir = {}
+	IncludeDir["GLFW"] = "Genesis/vendor/GLFW/include"
+
+	include "Genesis/vendor/GLFW"
+
 	project "Genesis"
 		location "Genesis"
 		kind "SharedLib"
@@ -30,7 +36,14 @@ workspace "Genesis"
 		includedirs
 		{
 			"%{prj.name}/src",
-			"%{prj.name}/vendor/spdlog/include"
+			"%{prj.name}/vendor/spdlog/include",
+			"%{IncludeDir.GLFW}"
+		}
+
+		links
+		{
+			"GLFW",
+			"opengl32.lib"
 		}
 
 		filter "system:windows"
@@ -51,14 +64,17 @@ workspace "Genesis"
 
 		filter "configurations:Debug"
 			defines "GN_DEBUG"
+			buildoptions "/MDd"
 			symbols "On"
 
 		filter "configurations:Release"
 			defines "GN_RELEASE"
+			buildoptions "/MD"
 			optimize "On"
 
 		filter "configurations:Dist"
 			defines "GN_DIST"
+			buildoptions "/MD"
 			optimize "On"
 
 project "Sandbox"
@@ -98,12 +114,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "GN_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "GN_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "GN_DIST"
+		buildoptions "/MD"
 		optimize "On"

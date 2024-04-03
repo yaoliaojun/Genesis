@@ -12,6 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Genesis/Log.h"
+
 #ifdef GN_PLATFORM_WINDOWS
 #include <Windows.h>
 #endif

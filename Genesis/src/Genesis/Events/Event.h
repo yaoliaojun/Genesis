@@ -47,12 +47,12 @@ namespace Genesis {
 		bool m_Handled = false;//是否已经被处理
 	};
 
-	class EvnetDispatcher //事件调度器，将事件调度到指定函数指针
+	class EventDispatcher //事件调度器，将事件调度到指定函数指针
 	{
 		template<typename T>
-		using EventFn = std::function<bool(T&)>;
+		using EventFn = std::function<bool(T&)>;//以T&（类）为参数，bool为返回值的函数，T为任何事件类型
 	public:
-		EvnetDispatcher(Event& event)
+		EventDispatcher(Event& event)//收到一个事件引用创建调度器
 			:m_Event(event)
 		{
 		}
@@ -60,7 +60,7 @@ namespace Genesis {
 		template<typename T>
 		bool Dispatch(EventFn<T> func)
 		{
-			if (m_Event, GetEventType() == T::GetStaticType())//将事件id与模板参数比较
+			if (m_Event.GetEventType() == T::GetStaticType())//将事件id与T模板参数比较，调度器事件与传入参数事件一致则继续
 			{
 				m_Event.m_Handled = func(*(T*)&m_Event);//符合则调度相应模板
 				return true;

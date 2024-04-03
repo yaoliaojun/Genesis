@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "Events/Event.h"
+#include "Genesis/Events/ApplicationEvent.h"
 #include "Window.h"
 
 namespace Genesis {
@@ -13,8 +14,12 @@ namespace Genesis {
 
 
 		void Run();
+
+		void OnEvent(Event& e);
 	private:
-		std::unique_ptr<Window> m_Window;//窗口指针
+		bool OnWindowClose(WindowCloseEvent& e);
+
+		std::unique_ptr<Window> m_Window;//窗口示例指针
 		bool m_Running = true;//循环判断
 	};
 

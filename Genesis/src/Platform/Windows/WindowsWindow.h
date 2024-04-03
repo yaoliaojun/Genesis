@@ -27,7 +27,7 @@ namespace Genesis {
 	private:
 		GLFWwindow* m_Window;
 
-		struct WindowData
+		struct WindowData//需要传递到GLFW，存储事件回调需要的参数
 		{
 			std::string Title;
 			unsigned int Width, Height;

@@ -25,7 +25,7 @@ namespace Genesis {
 	class GENESIS_API Window
 	{
 	public:
-		using EventCallbackFn = std::function<void(Event&)>;
+		using EventCallbackFn = std::function<void(Event&)>;//事件回调
 
 		virtual ~Window() {}
 
@@ -39,6 +39,6 @@ namespace Genesis {
 		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
 
-		static Window* Create(const WindowProps& props = WindowProps());//创建Window结构体
+		static Window* Create(const WindowProps& props = WindowProps());//创建Window结构体，在每个平台实现
 	};
 }

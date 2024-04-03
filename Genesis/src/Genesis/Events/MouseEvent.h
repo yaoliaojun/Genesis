@@ -61,6 +61,22 @@ namespace Genesis {
 		int m_Button;
 	};
 
+	class GENESIS_API MouseButtonPressedEvent : public MouseButtonEvent
+	{
+	public:
+		MouseButtonPressedEvent(int button)
+			: MouseButtonEvent(button) {}
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "MouseButtonPressedEvent: " << m_Button;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(MouseButtonPressed)
+	};
+
 	class GENESIS_API MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
